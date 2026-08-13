@@ -4,7 +4,7 @@ import { join, resolve } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 
-const ROOT = resolve(fileURLToPath(new URL("../oas-package", import.meta.url)));
+const ROOT = resolve(fileURLToPath(new URL("../oats-package", import.meta.url)));
 const read = (...parts) => readFileSync(join(ROOT, ...parts), "utf8");
 
 function frontmatter(text) {
@@ -16,8 +16,8 @@ function frontmatter(text) {
 }
 
 test("flat capability manifest names all three canonical root skills", () => {
-  const outer = JSON.parse(read("oas-package.json"));
-  const capability = JSON.parse(read("oas.json"));
+  const outer = JSON.parse(read("oats-package.json"));
+  const capability = JSON.parse(read("oats.json"));
   assert.deepEqual(outer.capabilities, ["."]);
   assert.deepEqual(capability.skills, [
     "skills/integration-authoring",
@@ -39,7 +39,7 @@ test("packaged Agent Skill names match their directories", () => {
 
 test("integration delegation uses the public CLI, not private kernel files", () => {
   const skill = read("skills", "integration-authoring", "SKILL.md");
-  assert.match(skill, /oas spawn integrations-expert/);
+  assert.match(skill, /oats spawn integrations-expert/);
   assert.doesNotMatch(skill, /lib\/core\.mjs/);
   assert.doesNotMatch(skill, /<framework-repo>/);
   assert.match(skill, /\.agents\/capabilities\/owned\/<name>/);

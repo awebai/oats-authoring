@@ -1,12 +1,12 @@
 ---
 name: integration-authoring
 description: >-
-  Route custom OAS capability-package and integration work to the framework's
+  Route custom OATS capability-package and integration work to the framework's
   integrations expert. Use when building, adapting, or debugging a reusable
-  capability, new task/messaging/knowledge integration, oas.json manifest,
+  capability, new task/messaging/knowledge integration, oats.json manifest,
   lifecycle hook, or operational command—not merely activating an existing
   package. Triggers: "custom integration", "capability package", "integrate
-  our tracker", "new messaging integration", "write an oas.json".
+  our tracker", "new messaging integration", "write an oats.json".
 ---
 
 # Capability and integration authoring — delegate
@@ -20,19 +20,19 @@ the framework's **integrations-expert** soul rather than improvising.
 If the user only wants an existing package, use:
 
 ```bash
-oas install <source>            # external acquisition + exact lock; inactive
-oas trust <id>                  # only if commands/hooks exist
-oas use <id> --global|--type <t>|--soul <s>
+oats install <source>            # external acquisition + exact lock; inactive
+oats trust <id>                  # only if commands/hooks exist
+oats use <id> --global|--type <t>|--soul <s>
 ```
 
 ## 1. Verify the expert is available
 
-Run `oas status` and confirm the deployment can resolve the `integrations-expert` soul. If it is absent, ask the human which OAS framework deployment owns reusable package work; never locate or import private kernel files.
+Run `oats status` and confirm the deployment can resolve the `integrations-expert` soul. If it is absent, ask the human which OATS framework deployment owns reusable package work; never locate or import private kernel files.
 
 ## 2. Spawn the expert against the user's repository
 
 ```bash
-oas spawn integrations-expert \
+oats spawn integrations-expert \
   --purpose <package-slug> \
   --repo <users-workspace-or-repo> \
   --work checkout \

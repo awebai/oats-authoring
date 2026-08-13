@@ -1,6 +1,6 @@
-# oas-authoring
+# oats-authoring
 
-Official additive [OAS](https://github.com/OAS-Framework/oas) authoring guidance. This repository is the single canonical home of three Agent Skills:
+Official additive [OATS](https://github.com/awebai/oats) authoring guidance. This repository is the single canonical home of three Agent Skills:
 
 - `integration-authoring` routes reusable capability/integration work to the framework's integrations expert;
 - `skill-craft` teaches grounded Agent Skills design, triggering, evaluation, and maintenance; and
@@ -10,27 +10,27 @@ It claims no fundamental layer and contributes no commands, hooks, host requirem
 
 ## Requirements
 
-A compatible OAS deployment must provide the `integrations-expert` soul for the delegation workflow. The skill uses the public `oas spawn` command; it does not locate or import private kernel files.
+A compatible OATS deployment must provide the `integrations-expert` soul for the delegation workflow. The skill uses the public `oats spawn` command; it does not locate or import private kernel files.
 
-The frozen addendum supports this flat capability-root declaration. The package requires OAS `>=0.19.0`; see [`SCHEMA-STATUS.md`](SCHEMA-STATUS.md) for the remaining released-kernel fixture gate.
+The frozen addendum supports this flat capability-root declaration. The package requires OATS `>=0.19.0`; see [`SCHEMA-STATUS.md`](SCHEMA-STATUS.md) for the remaining released-kernel fixture gate.
 
 ## Acquire and activate
 
 Acquisition does not activate the capability. After an official release exists:
 
 ```bash
-oas install oas.authoring --dir /path/to/scope
-oas use oas.authoring --global --dir /path/to/scope
-oas doctor /path/to/scope --soul <authoring-soul>
+oats install oats.authoring --dir /path/to/scope
+oats use oats.authoring --global --dir /path/to/scope
+oats doctor /path/to/scope --soul <authoring-soul>
 ```
 
 A pinned Git source may be used after publication:
 
 ```bash
-oas install git:https://github.com/OAS-Framework/oas-authoring.git@v1.0.0 --dir /path/to/scope
+oats install git:https://github.com/awebai/oats-authoring.git@v1.0.0 --dir /path/to/scope
 ```
 
-No `oas trust` step is needed because the manifest exports skills only. Targeting remains config-owned; activate for an authoring agent type or selected souls instead of globally when appropriate.
+No `oats trust` step is needed because the manifest exports skills only. Targeting remains config-owned; activate for an authoring agent type or selected souls instead of globally when appropriate.
 
 ## Development
 
@@ -38,4 +38,4 @@ No `oas trust` step is needed because the manifest exports skills only. Targetin
 npm test
 ```
 
-This validates both manifests, checks that all three skill paths are package-contained, validates skill frontmatter/name contracts, and rejects private-kernel import guidance. The full acquire → lock → activate → spawn probe remains pending released OAS 0.19.0 consumer fixtures.
+This validates both manifests, checks that all three skill paths are package-contained, validates skill frontmatter/name contracts, and rejects private-kernel import guidance. The full acquire → lock → activate → spawn probe remains pending released OATS 0.19.0 consumer fixtures.

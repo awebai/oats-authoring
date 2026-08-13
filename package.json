@@ -1,7 +1,7 @@
 {
-  "name": "@oas-framework/oas-authoring",
+  "name": "@awebai/oats-authoring",
   "version": "1.0.0",
-  "description": "Official additive OAS guidance for capability, skill, and soul authoring.",
+  "description": "Official additive OATS guidance for capability, skill, and soul authoring.",
   "license": "MIT",
   "type": "module",
   "private": true,
@@ -11,6 +11,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OAS-Framework/oas-authoring"
+    "url": "https://github.com/awebai/oats-authoring"
   }
 }
