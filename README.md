@@ -6,7 +6,7 @@ Official additive [OATS](https://github.com/awebai/oats) authoring guidance. Thi
 - `skill-craft` teaches grounded Agent Skills design, triggering, evaluation, and maintenance; and
 - `soul-craft` teaches concise durable soul operating docs and the boundary between always-loaded instructions, on-demand skills, and knowledge.
 
-It claims no fundamental layer and contributes no commands, hooks, host requirements, or deployment policy.
+It is not a core capability (no `layer`) and contributes no commands, hooks, host requirements, or deployment policy.
 
 ## Requirements
 
