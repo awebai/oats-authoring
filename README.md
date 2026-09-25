@@ -14,23 +14,25 @@ A compatible OATS deployment must provide the `integrations-expert` soul for the
 
 The frozen addendum supports this flat capability-root declaration. The package requires OATS `>=0.19.0`; see [`SCHEMA-STATUS.md`](SCHEMA-STATUS.md) for the remaining released-kernel fixture gate.
 
-## Acquire and activate
+## Use it in a workspace
 
-Acquisition does not activate the capability. After an official release exists:
+Declare the package in the workspace's `oats-workspace.yaml` (declaring it is
+the trust decision; this package exports skills only, so nothing runs), give
+the capability to the souls that author, then run `oats sync`:
 
-```bash
-oats install oats.authoring --dir /path/to/scope
-oats use oats.authoring --global --dir /path/to/scope
-oats doctor /path/to/scope --soul <authoring-soul>
+```yaml
+packages:
+  oats.authoring: v1.0.1                  # through the official catalog
+  # or: git:github.com/awebai/oats-authoring@v1.0.1
+defaults:
+  capabilities:
+    oats.authoring: { from: package }     # or per soul, in its soul.yaml
 ```
 
-A pinned Git source may be used after publication:
-
 ```bash
-oats install git:https://github.com/awebai/oats-authoring.git@v1.0.0 --dir /path/to/scope
+oats sync
+oats spawn <authoring-soul> --preview     # the composed skills include the three above
 ```
-
-No `oats trust` step is needed because the manifest exports skills only. Targeting remains config-owned; activate for an authoring agent type or selected souls instead of globally when appropriate.
 
 ## Development
 
