@@ -22,8 +22,8 @@ the capability to the souls that author, then run `oats sync`:
 
 ```yaml
 packages:
-  oats.authoring: v1.0.1                  # through the official catalog
-  # or: git:github.com/awebai/oats-authoring@v1.0.1
+  oats.authoring: v1.0.2                  # through the official catalog
+  # or: git:github.com/awebai/oats-authoring@v1.0.2
 defaults:
   capabilities:
     oats.authoring: { from: package }     # or per soul, in its soul.yaml
