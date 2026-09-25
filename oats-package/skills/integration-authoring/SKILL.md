@@ -23,8 +23,9 @@ no build is needed:
 ```yaml
 # oats-workspace.yaml (host repository): declaring the package is the trust decision
 packages:
-  vendor.tools: git:github.com/vendor/tools@v1.0.0
-# a soul's soul.yaml, or the workspace defaults
+  vendor.review: git:github.com/vendor/review@v1.0.0
+# a soul's soul.yaml, or the workspace defaults: a capability the package exports
+# (a package may export several; the soul names each one it wants)
 capabilities:
   vendor.review: { from: package }
 ```

@@ -12,7 +12,7 @@ It claims no fundamental layer and contributes no commands, hooks, host requirem
 
 A compatible OATS deployment must provide the `integrations-expert` soul for the delegation workflow. The skill uses the public `oats spawn` command; it does not locate or import private kernel files.
 
-The frozen addendum supports this flat capability-root declaration. The package requires OATS `>=0.19.0`; see [`SCHEMA-STATUS.md`](SCHEMA-STATUS.md) for the remaining released-kernel fixture gate.
+The frozen addendum supports this flat capability-root declaration. The package requires OATS `>=0.25.0` (the workspace model its guidance teaches); see [`SCHEMA-STATUS.md`](SCHEMA-STATUS.md) for the remaining released-kernel fixture gate.
 
 ## Use it in a workspace
 
