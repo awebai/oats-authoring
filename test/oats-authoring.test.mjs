@@ -42,7 +42,17 @@ test("integration delegation uses the public CLI, not private kernel files", () 
   assert.match(skill, /oats spawn integrations-expert/);
   assert.doesNotMatch(skill, /lib\/core\.mjs/);
   assert.doesNotMatch(skill, /<framework-repo>/);
-  assert.match(skill, /\.agents\/capabilities\/owned\/<name>/);
+  // Workspace model: a package is distributed from its own repository; no local installed/owned store.
+  assert.doesNotMatch(skill, /\.agents\/capabilities\/(owned|installed)/);
+  assert.match(skill, /`oats-package\/` with a\s+version tag/);
+});
+
+test("no authoring skill teaches a verb or soul field the workspace model removed", () => {
+  for (const name of ["integration-authoring", "skill-craft", "soul-craft"]) {
+    const skill = read("skills", name, "SKILL.md");
+    assert.doesNotMatch(skill, /oats (install|restore|init|use|trust|list|catalog|remove|migrate|config|inject|create|type)(?![\w-])/, name);
+  }
+  assert.doesNotMatch(read("skills", "soul-craft", "SKILL.md"), /Keep honest: `repo`/);
 });
 
 test("authoring skills preserve the instruction-skill-knowledge boundary", () => {
