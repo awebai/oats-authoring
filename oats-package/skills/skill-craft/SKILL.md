@@ -22,7 +22,7 @@ the task** — the description carries the entire burden of triggering.
 
 - **Repeatable procedure** ("how to do X, again and again") → **skill**.
 - **Declarative fact/decision/lesson** ("what is true and why") → **OKF
-  concept** in the knowledge base (see `okf` skill). Skills may reference
+  concept** in the knowledge base (see `/okf-instance-knowledge`). Skills may reference
   concepts for the why.
 - **Applies to every session of this agent** (role, boundaries, core workflow)
   → **AGENTS.md** (see `soul-craft`). Rule of thumb: AGENTS.md is loaded
